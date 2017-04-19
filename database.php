@@ -3,8 +3,8 @@
 
 // cleardb access
 $dsn = 'mysql:host=ca-cdbr-azure-east-a.cloudapp.net;dbname=todo_list';
-$Username = 'b3b15faea695bd';
-$Password = '03ebe1ce';
+$userName = 'b3b15faea695bd';
+$password = '03ebe1ce';
 
 
 // exception handling - use a try / catch
