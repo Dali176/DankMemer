@@ -1,26 +1,25 @@
 <?php
-include_once('database.php');
-$taskID = $_GET["taskID"];
+include_once('database.php'); // include the database connection file
+
+$taskID = $_GET["taskID"]; // assigns the taskID from the URL
 
 if($taskID == 0) {
     $task = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
-    $query = "SELECT * FROM tasks WHERE ID = task_id";
-    $statement = $db->prepare($query);
-    $statement->bindValue(':task_id', $taskID);
-    //$statement->bindValue(':task_task', $taskTask);
-    //$statement->bindValue(':task_completed', $taskCompleted);
-    $statement->execute();
-    $game = $statement->fetch();
-    $statement->closeCursor();
+$query = "SELECT * FROM tasks WHERE Id = :task_id "; // SQL statement
+$statement = $db->prepare($query); // encapsulate the sql statement
+$statement->bindValue(':task_id', $taskID);
+$statement->execute(); // run on the db server
+$task = $statement->fetch(); // returns only one record
+$statement->closeCursor(); // close the connection
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Task Details</title>
     <!-- CSS Section -->
@@ -28,38 +27,42 @@ if($taskID == 0) {
     <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./Content/app.css">
-    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="todo_list.php" title="">Home</a></li>
-            <li><a href="task_details.php" title="">Task Details</a></li>
-        </ul>
-    </nav>
-</header>
+
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>Task Details</h1>
             <form action="update_database.php" method="post">
                 <div class="form-group">
-                    <label for="IDTextField" hidden>Task Number</label>
-                    <input type="hidden" class="form-control" id="IDTextField" name="IDTextField" placeholder="Task Number" value="<?php echo $task['ID']; ?>">
+                    <label for="IDTextField" hidden>Task ID</label>
+                    <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
+                           placeholder="Task ID" value="<?php echo $task['Id']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="TaskTextField">Task Name</label>
-                    <input type="text" class="form-control" id="NameTextField" name="NameTextField" placeholder="Task Name" required value="<?php echo $task['Task']; ?>">
+                    <label for="NameTextField">Task Name</label>
+                    <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
+                           placeholder="Task Name" required  value="<?php echo $task['Name']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="CompletedField">Completion</label>
-                    <input type="text" class="form-control" id="CompletedField" name="CompletedField"
-                           placeholder="Completed" required  value="<?php echo $task['Completed']; ?>">
+                    <label for="CompletedTextField">Task Completed</label>
+                    <input type="text" class="form-control" id="CompletedTextField" name="CompletedTextField"
+                           placeholder="Task Completed" required  value="<?php echo $task['Completed']; ?>">
                 </div>
+                    <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
+                <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>
             </form>
+
         </div>
     </div>
 </div>
+
+
+<!-- JavaScript Section -->
+<script src="./Scripts/lib/jquery/dist/jquery.min.js"></script>
+<script src="./Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./Scripts/app.js"></script>
 </body>
 </html>
+
