@@ -2,6 +2,10 @@
 <!--Todo_list mySQL website-->
 <!--Simple website with "user functionality" to allow them to edit and control the database-->
 
+<?php
+    include_once ("login.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

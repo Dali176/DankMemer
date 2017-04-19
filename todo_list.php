@@ -1,5 +1,6 @@
 <?php
 include_once('database.php');
+DBConnection();
 
 $query = "SELECT * FROM tasks";
 $statement = $db->prepare($query);
@@ -15,11 +16,11 @@ $statement->closeCursor();
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>To do list</title>
     <!-- CSS Section -->
-    <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="./Content/app.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="Scripts/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="Content/app.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
