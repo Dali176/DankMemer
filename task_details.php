@@ -41,14 +41,14 @@ $statement->closeCursor(); // close the connection
                            placeholder="Task ID" value="<?php echo $task['ID']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="TaskTextField">Task Task</label>
+                    <label for="TaskTextField">Task Name</label>
                     <input type="text" class="form-control" id="TaskTextField"  name="TaskTextField"
-                           placeholder="Task Task" required  value="<?php echo $task['Task']; ?>">
+                           placeholder="Task Name" required  value="<?php echo $task['Task']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="DescTextField">Task Task</label>
+                    <label for="DescTextField">Task Desc.</label>
                     <input type="text" class="form-control" id="DescTextField"  name="DescTextField"
-                           placeholder="Task Task" required  value="<?php echo $task['Description']; ?>">
+                           placeholder="Task Desc" required  value="<?php echo $task['Description']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="CompletedTextField">Task Completed</label>
