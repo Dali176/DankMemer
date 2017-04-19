@@ -1,6 +1,5 @@
 <?php
 include_once('database.php');
-DBConnection();
 $taskID = $_GET["taskID"];
 
 if($taskID == 0) {

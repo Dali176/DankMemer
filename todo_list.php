@@ -1,6 +1,5 @@
 <?php
 include_once('database.php');
-DBConnection();
 
 $query = "SELECT * FROM tasks";
 $statement = $db->prepare($query);
