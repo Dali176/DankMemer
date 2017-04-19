@@ -46,6 +46,11 @@ $statement->closeCursor(); // close the connection
                            placeholder="Task Name" required  value="<?php echo $task['Name']; ?>">
                 </div>
                 <div class="form-group">
+                    <label for="DescTextField">Task Name</label>
+                    <input type="text" class="form-control" id="DescTextField"  name="DescTextField"
+                           placeholder="Task Name" required  value="<?php echo $task['Description']; ?>">
+                </div>
+                <div class="form-group">
                     <label for="CompletedTextField">Task Completed</label>
                     <input type="text" class="form-control" id="CompletedTextField" name="CompletedTextField"
                            placeholder="Task Completed" required  value="<?php echo $task['Completed']; ?>">

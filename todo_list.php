@@ -32,6 +32,7 @@ $statement->closeCursor(); // close the connection
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Description</th>
                     <th>Completed</th>
                     <th></th>
                     <th></th>
@@ -40,6 +41,7 @@ $statement->closeCursor(); // close the connection
                         <tr>
                             <td><?php echo $task['Id'] ?></td>
                             <td><?php echo $task['Name'] ?></td>
+                            <td><?php echo $task['Description'] ?></td>
                             <td><?php echo $task['Completed'] ?></td>
                             <!-- This line sends the taskID to the task_details page -->
 
