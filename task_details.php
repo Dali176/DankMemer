@@ -38,17 +38,17 @@ $statement->closeCursor(); // close the connection
                 <div class="form-group">
                     <label for="IDTextField" hidden>Task ID</label>
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
-                           placeholder="Task ID" value="<?php echo $task['Id']; ?>">
+                           placeholder="Task ID" value="<?php echo $task['ID']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="NameTextField">Task Name</label>
-                    <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
-                           placeholder="Task Name" required  value="<?php echo $task['Name']; ?>">
+                    <label for="TaskTextField">Task Task</label>
+                    <input type="text" class="form-control" id="TaskTextField"  name="TaskTextField"
+                           placeholder="Task Task" required  value="<?php echo $task['Task']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="DescTextField">Task Name</label>
+                    <label for="DescTextField">Task Task</label>
                     <input type="text" class="form-control" id="DescTextField"  name="DescTextField"
-                           placeholder="Task Name" required  value="<?php echo $task['Description']; ?>">
+                           placeholder="Task Task" required  value="<?php echo $task['Description']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="CompletedTextField">Task Completed</label>
